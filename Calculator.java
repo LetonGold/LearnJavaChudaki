@@ -1,16 +1,34 @@
+import java.lang.Math;
+
 public class Calculator{
 	private int result;
-	public void add(int ... params){
-		for(Integer param: params){
+	
+	public void add(int ... parameters){
+		for(Integer param: parameters){
 			this.result += param;		
 		}	
 	}
+		
+	public void sub(int ... parameters){
+		this.result = parameters[0] - parameters[1];
+	}
 	
-	public void add(String ... params){
-		for(String param: params){
-			int additive = Integer.valueOf(param);
-			this.result += additive;		
+	public void mul(int ... parameters){
+		this.result = 1;
+		for(Integer param: parameters){
+			this.result = this.result * param;
 		}
+	}
+	
+	public void div(int ... parameters){
+		this.result = parameters[0]/ parameters[1];
+	}
+	
+	public void power(int ... parameters){
+		double firstNum = (double) parameters[0];
+		double secondNum = (double) parameters[1];
+		double tempRes = Math.pow(firstNum, secondNum);
+		this.result = (int) tempRes;
 	}
 	
 	public int getResult(){
