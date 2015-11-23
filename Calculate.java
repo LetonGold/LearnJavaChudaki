@@ -22,6 +22,6 @@ public class Calculate{
                 break;
         }
         System.out.println(result);
-	System.out.println("This is necessery string, absolutely necessery...");
+	System.out.println("This is necessery string...");
     }
 }
