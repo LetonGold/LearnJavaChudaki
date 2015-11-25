@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.Scanner; //импорт класса отвечающего за ввод с клавиатуры
 
 public class InteractRunner{
 	public static void main(String[] args){
