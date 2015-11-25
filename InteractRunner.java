@@ -25,38 +25,38 @@ public class InteractRunner{ //создание класса InteractRunner, к�
 				
 				}
 				
-				System.out.println("Enter operation symbol: ");
-				String symb = read.next();
+				System.out.println("Enter operation symbol: ");// вывод на экран предложения ввести символ операции
+				String symb = read.next(); // ожидание ввода от пользователя символа с записью полученного значения в переменную symb
 				
-				System.out.println("Enter second arg :");
-				int secondint = read.nextInt();
+				System.out.println("Enter second arg :"); //вывод на экранпредложения ввести второе число
+				int secondint = read.nextInt();//ожидание ввода от пользователя второго числа и занесение полученного числа в переменную secondint
 				
-				switch(symb){
-					case "+": calc.add(firstint, secondint);
+				switch(symb){ //переключатель который на основе введенного символа выбирает какой метод из объекта calc вызвать
+					case "+": calc.add(firstint, secondint); // в случае символа + вызвать метод add() в объекте calc и в качестве параметров передать значения переменных firstint и secondint
 						break;
-					case "-": calc.sub(firstint, secondint);
+					case "-": calc.sub(firstint, secondint); // в случае символа - вызвать метод sub() в объекте calc и в качестве параметров передать значения переменных firstint и secondint
 						break;
-					case "x": calc.mul(firstint, secondint);
+					case "x": calc.mul(firstint, secondint); // в случае символа x вызвать метод mul() в объекте calc и в качестве параметров передать значения переменных firstint и secondint
 						break;
-					case "/": calc.div(firstint, secondint);
+					case "/": calc.div(firstint, secondint); // в случае символа / вызвать метод div() в объекте calc и в качестве параметров передать значения переменных firstint и secondint
 						break;
-					case "pow": calc.power(firstint, secondint);
+					case "pow": calc.power(firstint, secondint);// в случае слова pow вызвать метод power() в объекте calc и в качестве параметров передать значения переменных firstint и secondint
 						break;
-					default: System.out.println("Please enter valid operation symbol (+, -, x, /, pow)");
+					default: System.out.println("Please enter valid operation symbol (+, -, x, /, pow)"); // в случае отсутствия символа в списке на экран выведется сообщение о том что нужно ввести один из представленных символов
 						break;
 				}
 				
-				persistentResult = calc.getResult();
-				calc.cleanResult();
-				System.out.println("Result: " + persistentResult);
-				System.out.println("Exit: yes\no ");
-				exit = read.next();
-				if(exit.equals("yes"))break;
-				System.out.println("Will you use your result in the next operation? ");
-				useResNxt = read.next();
+				persistentResult = calc.getResult(); // сохранение в переменную persistentResult значение, которое вернула функция getResult() объекта calc
+				calc.cleanResult(); // обнуление хранимого результата в объекте calc
+				System.out.println("Result: " + persistentResult); // вывод на экран результата, хранимого уже в persistentResult
+				System.out.println("Exit: yes\no ");//вывод на экран вопроса о продолжении выполнения этой программы
+				exit = read.next(); //запись с клавиатуры значения в переменную exit
+				if(exit.equals("yes"))break; // проверка значения в переменной exit и если значение равно yes - остановить цикл, после чего выполнение программы прекратится
+				System.out.println("Will you use your result in the next operation? "); //вывод на экран вопроса о том, использовать ли в следующей операции полученный результат
+				useResNxt = read.next(); //запись с клавиатуры значения в переменную useResNxt
 			}
 		}finally{
-			read.close();
+			read.close(); //остановка и выведение из памяти объекта read класса Scanner
 		}
 	}
 }
