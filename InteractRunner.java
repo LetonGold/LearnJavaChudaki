@@ -1,7 +1,7 @@
 import java.util.Scanner; //импорт класса отвечающего за ввод с клавиатуры
 
-public class InteractRunner{
-	public static void main(String[] args){
+public class InteractRunner{ //создание класса InteractRunner, которое совпадает с именем файла.(обязательно)
+	public static void main(String[] args){ //точка входа в программу (главный метод класса, с этой строки всегда начинается выполнение кода в программе, если этого метода нет то класс джава не будет выполняться совсем, вместо этого в нем могут храниться методы и переменные для использования другими классами)
 		Scanner read = new Scanner(System.in);
 		try{
 			Calculator calc = new Calculator();
