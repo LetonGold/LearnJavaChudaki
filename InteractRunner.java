@@ -13,25 +13,23 @@ public class InteractRunner{ //создание класса InteractRunner, к�
 				
 				switch(useResNxt){ // переключатель, который выбирает какой вариант первого числа использовать в текущей итерации
 					case "yes": // значение yes в переменной useResNxt выбирает вариант использования в качестве первого числа значение хранимое в переменной persistentResult
-						System.out.println("Your past result will be the first argument.");
-						firstint = persistentResult;
-						break;
+						System.out.println("Your past result will be the first argument.");//вывод на экран сообщения что первое число было взято из результата предыдущего решения
+						firstint = persistentResult; // присвоение переменной firstint значения хранимого в переменной persistentResult
+						break;//остановка(останавливает код в этом месте и выходит из выполнения цикла или не позволяет использовать дальнейший код в switch)
 					case "no": // значение no (по умолчанию) выбирает вариант использования первого числа запрашиваемого у пользователя с последующей записью с клавиатуры значения
-						System.out.println("Enter first arg :");
-						String first = read.next();
-						firstint = Integer.valueOf(first);
+						System.out.println("Enter first arg :"); // вывод на экран запроса ввода первого числа
+						int firstint = read.nextInt(); // ожидание ввода от пользователя первого числа и запись полученного числа в переменную first
 						break;
-					default: System.out.println("There is an error in useResNxt switch");
+					default: System.out.println("There is an error in useResNxt switch"); //значение switch которое должно существовать в любом случае, в данном переключателе я поставил его вернуть значение, с написанной ошибкой если в переменной не хранится "yes" или "no"
 						break;
 				
 				}
-				System.out.println("Enter second arg :");
-				String second = read.next();
-				int secondint = Integer.valueOf(second);
 				
 				System.out.println("Enter operation symbol: ");
 				String symb = read.next();
 				
+				System.out.println("Enter second arg :");
+				int secondint = read.nextInt();
 				
 				switch(symb){
 					case "+": calc.add(firstint, secondint);
