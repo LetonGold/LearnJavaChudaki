@@ -15,29 +15,29 @@ public class Calculator{ //Создание класса Калькулятор,
 		this.result = parameters[0] - parameters[1]; // в переменную result этого объекта будет записан результат вычитания числа в первом индексе массива parameters из числа в нулевом индексе массива parameters(в джава индексы начинаются с "0") 
 	}
 	
-	public void mul(int ... parameters){ //метод с названием mul который выполняет функию умножения. Параметры записываются в массива parameters
+	public void mul(int ... parameters){ //метод с названием mul который выполняет функию умножения. Параметры записываются в массив parameters
 		this.result = 1; // в результат сначала вносится "1" поскольку изначально в result хранится значение "0", что при дальнейшем вычислении даст результатом первого вычисления "1" 
-		for(Integer param: parameters){
-			this.result = this.result * param;
+		for(Integer param: parameters){ //цикл for в котором выполняется действие в блоке кода, столько раз, сколько находится в массиве parameters значений
+			this.result = this.result * param; //данный блок кода перемножае текущее значение result с текущим значением переменной param
 		}
 	}
 	
-	public void div(int ... parameters){
-		this.result = parameters[0]/ parameters[1];
+	public void div(int ... parameters){ //метод с названием div который выполняет функцию деления.Параметры записываются в массив parameters. Так же стоит напомнить что результат решения будет целочисленный, в связи с типом переменной integer
+		this.result = parameters[0]/ parameters[1]; //в переменную result записывается результат деления чисел из первой ячейки массива(нулевой индекс) и из второй ячейки массива(первый индекс)
 	}
 	
-	public void power(int ... parameters){
-		double firstNum = (double) parameters[0];
-		double secondNum = (double) parameters[1];
-		double tempRes = Math.pow(firstNum, secondNum);
-		this.result = (int) tempRes;
+	public void power(int ... parameters){ //метод с названием power который выполняет функцию возведения в степень. Параметры записываются в массив parameters. 
+		double firstNum = (double) parameters[0]; //здесь я перевел тип данных из int в double, поскольку метод pow из пакета Math понимает на вводе только этот тип(число с плавающей точкой, в которой может храниться в 2 раза больше информации чем в float)
+		double secondNum = (double) parameters[1];//здесь я перевел тип данных из int в double, поскольку метод pow из пакета Math понимает на вводе только этот тип(число с плавающей точкой, в которой может храниться в 2 раза больше информации чем в float)
+		double tempRes = Math.pow(firstNum, secondNum); //в переменную с типом double и названием tempRes записывается результат возведения в степень двух чисел, из 2х предыдущих операций.первое число в параметре это число возводимое в степень, второе число в параметре - степень, в которую нужно возвести число.
+		this.result = (int) tempRes; //в переменную result записываем результат возведения в степень предварительно переведя его в тип данных в int 
 	}
 	
-	public int getResult(){
+	public int getResult(){ //метод, который вернет содержимое переменной result этого объекта
 		return this.result;
 	}
 
-	public void cleanResult(){
+	public void cleanResult(){ //метод, который в переменной result напишет "0" заместив результат и подготовив переменную для выполнения следующей математической операции
 		this.result = 0;
 	}
 }
